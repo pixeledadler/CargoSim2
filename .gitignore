@@ -11,3 +11,4 @@ Cargo.lock
 **/node_modules
 **/src-tauri/target
 **/src-tauri/icons
+**/src-tauri/WixTools
