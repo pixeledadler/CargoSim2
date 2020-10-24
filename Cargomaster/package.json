@@ -1,7 +1,7 @@
 {
-  "name": "bodymaster",
+  "name": "cargomaster",
   "version": "0.0.1",
-  "description": "This one is to make ships",
+  "description": "This one loads the ships",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
