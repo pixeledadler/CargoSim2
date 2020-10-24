@@ -297,4 +297,72 @@ if (!String.prototype.startsWith) {
     })
   }
 })()
-</script> <meta http-equiv="Content-Security-Policy" content="default-src blob: data: filesystem: ws: http: https: 'unsafe-eval' 'unsafe-inline'"></head> <body> <h1>Cargomaster</h1>  </body></html>
+</script><script>(function () {
+  function loadAsset(path, type) {
+    if (path) {
+      window.__TAURI__.loadAsset(path, type)
+    }
+  }
+
+  var observer = new MutationObserver(mutation => {
+    mutation.forEach(function (mutationRecord) {
+      var addedNodes = mutationRecord.addedNodes
+      addedNodes.forEach(function (node) {
+        if (node.nodeType === 1) {
+          if (node.tagName === 'SCRIPT') {
+            node.onload = node.onerror = null
+            loadAsset(node.src)
+          } else if (node.tagName === 'LINK') {
+            if (node.type === 'text/css' || (node.href && node.href.endsWith('.css'))) {
+              loadAsset(node.href, 'stylesheet')
+            }
+          }
+        }
+      })
+    })
+  })
+
+  
+    var target = document.head
+  
+
+  observer.observe(target, {
+    childList: true,
+    subtree: true
+  })
+})()
+</script> <meta http-equiv="Content-Security-Policy" content="default-src blob: data: filesystem: ws: http: https: 'unsafe-eval' 'unsafe-inline'"></head> <body><script>(function () {
+  function loadAsset(path, type) {
+    if (path) {
+      window.__TAURI__.loadAsset(path, type)
+    }
+  }
+
+  var observer = new MutationObserver(mutation => {
+    mutation.forEach(function (mutationRecord) {
+      var addedNodes = mutationRecord.addedNodes
+      addedNodes.forEach(function (node) {
+        if (node.nodeType === 1) {
+          if (node.tagName === 'SCRIPT') {
+            node.onload = node.onerror = null
+            loadAsset(node.src)
+          } else if (node.tagName === 'LINK') {
+            if (node.type === 'text/css' || (node.href && node.href.endsWith('.css'))) {
+              loadAsset(node.href, 'stylesheet')
+            }
+          }
+        }
+      })
+    })
+  })
+
+  
+    var target = document.documentElement
+  
+
+  observer.observe(target, {
+    childList: true,
+    subtree: true
+  })
+})()
+</script> <h1>Cargomaster</h1>  </body></html>
