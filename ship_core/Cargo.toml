@@ -1,5 +1,5 @@
 [package]
-name = "core"
+name = "ship_core"
 version = "0.1.0"
 authors = ["Vilis Ērglis <vilis@taksis.org>"]
 edition = "2018"
